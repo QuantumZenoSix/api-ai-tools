@@ -1,7 +1,7 @@
 # XAI-Grok-Chatbot
 
 
-# Setup
+# Setup (without uv)
 1. Create a .env file with your XAI api key
 Example: `XAI_API_KEY=<my_api_key>`
 
@@ -15,11 +15,29 @@ $ virtualenv env && source env/bin/activate
 $ pip3 install -r requirements.txt
 ```
 
+<br />
 
-# Usage
+**Usage**  
 The "personality" parameter is optional, but can be used to give  your chatbot character.
 ```bash
 $ python3 app.py --personality "Rude and sarcastic"
 ```
+
+<br />
+
+
+# Setup (with uv)
+1. Setup an envir' variable with `XAI_API_KEY=<my_api_key>`
+```bash
+export XAI_API_KEY=XXXX
+```
+
+2. Setup virtual environment and run
+```bash
+$ uv init
+$ uv sync
+$ uv run python app.py --personality "Rude and sarcastic"
+```
+
   
 ![Alt text](./demo-001.gif?raw=true "Demo 1")

@@ -2,9 +2,11 @@
 from openai import OpenAI
 from dotenv import dotenv_values
 import argparse
+from os import getenv
 
-config = dotenv_values('.env');
-XAI_API_KEY = config["XAI_API_KEY"]
+# Returns str | None
+XAI_API_KEY = getenv("XAI_API_KEY", "default")  # fallback value
+
 grokai = OpenAI(
     api_key=XAI_API_KEY,
     base_url="https://api.x.ai/v1",
@@ -61,7 +63,7 @@ def main():
             messages.append(message)
 
             response = grokai.chat.completions.create(
-                model="grok-beta",
+                model="grok-code-fast-1",
                 messages=messages
             )
             # Store reply into chat history

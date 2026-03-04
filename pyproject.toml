@@ -7,5 +7,6 @@ requires-python = ">=3.12"
 dependencies = [
     "argparse>=1.4.0",
     "dotenv>=0.9.9",
+    "getenv>=0.2.0",
     "openai>=2.24.0",
 ]
